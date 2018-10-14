@@ -2,9 +2,9 @@ const Path = require('path');
 const Webpack = require('webpack');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const common = require('./webpack.common.js');
+const base = require('./webpack.base.config.js');
 
-module.exports = merge(common, {
+module.exports = merge(base, {
   mode: 'production',
   devtool: 'source-map',
   stats: 'errors-only',
@@ -17,7 +17,7 @@ module.exports = merge(common, {
     }),
     new Webpack.optimize.ModuleConcatenationPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'bundle.css'
+      filename: 'index.css'
     })
   ],
   module: {
@@ -28,7 +28,7 @@ module.exports = merge(common, {
         use: 'babel-loader'
       },
       {
-        test: /\.s?css/i,
+        test: /\.s?[ac]ss$/i,
         use : [
           MiniCssExtractPlugin.loader,
           'css-loader',

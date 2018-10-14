@@ -1,11 +1,11 @@
 const Path = require('path');
 const Webpack = require('webpack');
 const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
+const base = require('./webpack.base.config.js');
 
 const dest = Path.join(__dirname, '../dist');
 
-module.exports = merge(common, {
+module.exports = merge(base, {
   mode: 'development',
   devtool: 'cheap-eval-source-map',
   devServer: {
@@ -34,7 +34,7 @@ module.exports = merge(common, {
         loader: 'babel-loader'
       },
       {
-        test: /\.s?css$/i,
+        test: /\.s?[ac]ss$/i,
         use: ['style-loader', 'css-loader?sourceMap=true', 'sass-loader']
       }
     ]

@@ -1,23 +1,22 @@
-# Webpack Frontend Starterkit
+# Webpack Starter
 
-A lightweight foundation for your next webpack based frontend project.
+A lightweight webpack starter.
 
+### Install
 
-### Installation
-
-```
-npm install
-```
-
-### Start Dev Server
-
-```
-npm run dev
+```shell
+yarn
 ```
 
-### Build Prod Version
+### Serve
 
+```shell
+npm start
 ```
+
+### Build
+
+```shell
 npm run build
 ```
 
