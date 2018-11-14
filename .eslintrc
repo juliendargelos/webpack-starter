@@ -5,7 +5,6 @@
     "ecmaFeatures": {"modules": true},
     "extends": "eslint:recommended"
   },
-
   "rules": {
     "semi": ["warn", "never"]
   }
